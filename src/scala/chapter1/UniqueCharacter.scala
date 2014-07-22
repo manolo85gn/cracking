@@ -2,16 +2,16 @@ package chapter1
 
 object UniqueCharacter extends App {
 	
-	def contains(c: Char, input: Seq[Char]) : Boolean = {
+	def notContains(c: Char, input: Seq[Char]) : Boolean = {
 		input match {
-			case head+:tail => c != head && contains(c, tail)
+			case head+:tail => c != head && notContains(c, tail)
 			case Nil => true
 		}
 	}
 
 	def isUniqueCharacter(input: Seq[Char]) : Boolean = {
 		input match {
-			case head+:tail => contains(head, tail) && isUniqueCharacter(tail)
+			case head+:tail => notContains(head, tail) && isUniqueCharacter(tail)
 			case Nil => true 	
 		}
 	}
