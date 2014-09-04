@@ -10,7 +10,7 @@ public class Pid {
     int result4 = p.solution( new int[]{ -5, -1, -3 } );
     int result5 = p.solution( new int[]{ -5, -1, -3, -5, 0 } );
    
-    int arr6Length = 21000;
+    int arr6Length = 210000;
     int[] arr6 = new int[arr6Length];
     java.util.Random r = new java.util.Random();
 
@@ -57,22 +57,22 @@ public class Pid {
   }
 
   int findPosibleP(int[] A, int start){
-    System.out.println(">>>> Start: " + start);	  
-    int i = start;	  
+    //System.out.println(">>>> Start: " + start);	  
+    //int i = start;	  
     
-    while( i < (A.length -2) && A[i+1] > A[i] ){
-      i++;
+    while( start < (A.length -2) && A[start+1] > A[start] ){
+      start++;
     }
 
-    return i;
+    return start;
   }
 
   int findPosibleQ(int[] A, int start) {
-    int i = start + 1;
-    while( i < (A.length -1) && A[i+1] < A[i] ) {
-      i++;   
+    start += 1;
+    while( start < (A.length -1) && A[start+1] < A[start] ) {
+      start++;   
     }
-    return i;
+    return start;
   }
    
 
